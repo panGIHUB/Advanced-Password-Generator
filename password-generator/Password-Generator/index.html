@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Generate a <span>secure password</span></h1>
+        <h2>Never use an insecure password again.</h2>
+      </header>
+      
+      <div class="controls">
+        <div class="range-control">
+          <label for="passwordLength">Password Length: <span id="lengthValue">12</span></label>
+          <input
+            type="range"
+            id="passwordLength"
+            min="6"
+            max="32"
+            value="12"
+          />
+        </div>
+        
+        <div class="toggle-control">
+          <label for="special-char">Special Characters</label>
+          <label class="switch">
+            <input type="checkbox" id="special-char" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        
+        <div class="toggle-control">
+          <label for="uperrcase">Uppercase Letters</label>
+          <label class="switch">
+            <input type="checkbox" id="uperrcase" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        
+        <div class="toggle-control">
+          <label for="numbers">Numbers</label>
+          <label class="switch">
+            <input type="checkbox" id="numbers" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      
+      <button id="generateBtn" class="generate-btn">
+        <i class="fas fa-bolt"></i>
+        <span>Generate Passwords</span>
+      </button>
+      
+      <section class="input-container">
+        <div class="password-field">
+          <input type="password" class="input--password" id="firstPassword" readonly />
+          <div class="password-actions">
+            <button class="copy-btn" data-target="firstPassword"><i class="far fa-copy"></i></button>
+            <button class="toggle-btn" data-target="firstPassword"><i class="far fa-eye"></i></button>
+          </div>
+          <div class="strength-meter" data-target="firstPassword"></div>
+        </div>
+        
+        <div class="password-field">
+          <input type="password" class="input--password" id="secondPasword" readonly />
+          <div class="password-actions">
+            <button class="copy-btn" data-target="secondPasword"><i class="far fa-copy"></i></button>
+            <button class="toggle-btn" data-target="secondPasword"><i class="far fa-eye"></i></button>
+          </div>
+          <div class="strength-meter" data-target="secondPasword"></div>
+        </div>
+        
+        <div class="password-field">
+          <input type="password" class="input--password" id="thirdPasword" readonly />
+          <div class="password-actions">
+            <button class="copy-btn" data-target="thirdPasword"><i class="far fa-copy"></i></button>
+            <button class="toggle-btn" data-target="thirdPasword"><i class="far fa-eye"></i></button>
+          </div>
+          <div class="strength-meter" data-target="thirdPasword"></div>
+        </div>
+        
+        <div class="password-field">
+          <input type="password" class="input--password" id="fourthPasword" readonly />
+          <div class="password-actions">
+            <button class="copy-btn" data-target="fourthPasword"><i class="far fa-copy"></i></button>
+            <button class="toggle-btn" data-target="fourthPasword"><i class="far fa-eye"></i></button>
+          </div>
+          <div class="strength-meter" data-target="fourthPasword"></div>
+        </div>
+      </section>
+      
+      <div class="strength-info">
+        <div class="strength-label">Password Strength:</div>
+        <div class="strength-levels">
+          <span data-level="1">Weak</span>
+          <span data-level="2">Fair</span>
+          <span data-level="3">Good</span>
+          <span data-level="4">Strong</span>
+          <span data-level="5">Very Strong</span>
+        </div>
+      </div>
+      
+      <div class="advanced-options">
+        <h3>Advanced Options</h3>
+        <div class="toggle-control">
+          <label for="exclude-similar">Exclude Similar Characters (i, l, 1, etc.)</label>
+          <label class="switch">
+            <input type="checkbox" id="exclude-similar">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="toggle-control">
+          <label for="exclude-ambiguous">Exclude Ambiguous Characters ({ } [ ] etc.)</label>
+          <label class="switch">
+            <input type="checkbox" id="exclude-ambiguous">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      
+      <p class="error-message"></p>
+    </main>
+
+    <!-- Footer Section with Copyright and Developer Info -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="copyright">
+          &copy; <span id="current-year"></span> Password Generator. All rights reserved.<br>
+          Developed by <a href="https://pangihub.github.io/pankajkumarportfolio/" target="_blank">Pankaj Kumar</a>
+        </div>
+        
+        <div class="developer-contact">
+          <h3>If you want to make any website from me, then contact me?</h3>
+          <div class="developer-links">
+            <a href="https://pangihub.github.io/pankajkumarportfolio/" target="_blank" class="portfolio-link">
+              <i class="fas fa-briefcase"></i> Portfolio
+            </a>
+            <a href="https://github.com/panGIHUB" target="_blank" class="github-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:pankjpk7017kr@gmail.com" class="email-link">
+              <i class="fas fa-envelope"></i> Hire Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Automatically update copyright year
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
