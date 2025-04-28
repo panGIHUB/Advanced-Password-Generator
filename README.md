@@ -8,7 +8,7 @@ Here’s a **professional `README.md`** file for your **Advanced Password Genera
 ```markdown
 # 🔒 Advanced Password Generator
 
-![Demo Screenshot](/assets/demo.png) 
+
 
 A **secure, customizable password generator** built with HTML, CSS, and JavaScript. Generate strong, randomized passwords instantly with options for length, symbols, numbers, and case sensitivity. Perfect for developers and security-conscious users.
 
